@@ -11,6 +11,6 @@
   "rules": {
     "no-unused-vars": "error",
     "no-console": "warn",
-    "eqeqeq": "error"
+     "eqeqeq": ["error", "always"]
   }
 }

@@ -14,7 +14,7 @@ export default [
     rules: {
       'no-unused-vars': 'error',
       'no-console': 'warn',
-      'eqeqeq': 'error',
+      'eqeqeq': ['error', 'always'],
       'semi': ['error', 'always'],             
       'quotes': ['error', 'single'],            
       'indent': ['error', 2],                   

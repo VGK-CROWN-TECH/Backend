@@ -1,48 +1,56 @@
 let responses = {
 
-    missingParam: (fields) => {
+  missingParam: (fields) => {
 
-        let res = {
-            status: "error",
-            status_code: "203",
-            message: "invalid data",
-            required_field: fields.toString()
-        };
-        return res;
-    },
+    let res = {
+      status: 'error',
+      status_code: '203',
+      message: 'invalid data',
+      required_field: fields.toString()
+    };
+    return res;
+  },
 
-    error: (code, msg) => {
+  error: (code, msg) => {
 
-        let res = {
-            status: "error",
-            status_code: code,
-            message: msg,
-        };
-        return res;
-    },
+    let res = {
+      status: 'error',
+      status_code: code,
+      message: msg
+    };
+    return res;
+  },
 
-    success: (msg, result = null) => {
+  success: (msg, result = null) => {
 
-        let res = {
-            status: "success",
-            status_code: "200",
-            message: msg
-        };
-        if (result) res['result'] = result;
-        return res;
-    },
+    let res = {
+      status: 'success',
+      status_code: '200',
+      message: msg
+    };
+    if (result) res['result'] = result;
+    return res;
+  },
 
-    created: (msg, result = null) => {
+  created: (msg, result = null) => {
 
-        let res = {
-            status: "success",
-            status_code: "201",
-            message: msg
-        };
-        if (result) res['result'] = result;
-        return res;
-    }
+    let res = {
+      status: 'success',
+      status_code: '201',
+      message: msg
+    };
+    if (result) res['result'] = result;
+    return res;
+  },
 
-}
+  noRecord: (msg = 'No record found') => {
+    return {
+      status: 'error',
+      status_code: '204',
+      message: msg
+    };
+  }
+
+};
 
 module.exports = responses;
